@@ -1,0 +1,37 @@
+head, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+tr {
+    height: 50vh;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.td1 {
+    background-color: rgba(255, 166, 0, 0.575);
+}
+
+.td2 {
+    background-color: rgba(0, 0, 255, 0.562);
+}
+
+.td3 {
+    background-color: rgba(0, 128, 0, 0.486);
+}
+
+.td4 {
+    background-color: rgba(255, 0, 0, 0.527);
+}
