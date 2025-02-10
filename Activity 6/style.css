@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    float: left;
+    line-height: 1.5;
+    font-size: 1.5em;
+    color: white;
+}
+
+.div1 {
+    background-color: rgba(255, 166, 0, 0.575);
+}
+
+.div2 {
+    background-color: rgba(0, 0, 255, 0.562);
+}
+
+.div3 {
+    background-color: rgba(0, 128, 0, 0.486);
+}
+
+.div4 {
+    background-color: rgba(255, 0, 0, 0.527);
+}
+
+.error {
+    color: red;
+}
