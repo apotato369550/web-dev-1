@@ -1,27 +1,33 @@
 <?php
 
-$users = array(
-    array("John", "gwapo", "admin", "admin.html"),
-    array("James", "bright", "cashier", "cashier.html"),
-    array("Peter", "cute", "cashier", "cashier.html"),
-    array("Joseph", "buotan", "client", "client.html"),
-    array("Jack", "stylish", "client", "client.html")
-);
+session_start();
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-for ($i = 0; $i < count($users); $i++) {
-    $currentUsername = $users[$i][0];
-    $currentPassword = $users[$i][1];
-    $userType = $users[$i][2];
-    $redirect = $users[$i][3];
-    if ($username === $currentUsername && $password === $currentPassword) {
-        header("Location: ".$redirect);
+foreach($_SESSION["users"] as $currentUser) {
+    $currentUsername = $currentUser[0];
+    $currentPassword = $currentUser[1];
+    $accountType = $currentUser[2];
+    $redirect = $currentUser[3];
+    echo "Current username: ".$currentUsername;
+    echo "<br>";
+    echo "User: ".$username;
+    echo "<br>";
+    echo "Current password: ".$currentPassword;
+    echo "<br>";
+    echo "Password: ".$password;
+    echo "<br>";
+    if ($currentUsername === $username && $currentPassword === $password) {
+        echo "FOUND!!!";
+        echo "<br>";
+        session_start();
+        $_SESSION["username"] = $username;
+        $_SESSION["account_type"] = $accountType;
+        header("Location: ./".$accountType."/".$redirect);
         exit();
     }
 }
-
-header("Location: index.php?username=".$username."&error=1");
+header("Location: ./index.php?username=".$username."&error=login");
 exit();
 ?>
