@@ -7,15 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php 
-        include "includes/users.inc.php";
-        session_start();
-        if (empty($_SESSION["users"])) {
-            $_SESSION["users"] = $users;
-        }
-    ?>
     <div class="div1">
-        <form action="registration.php" method="post">
+        <form action="includes/register.inc.php" method="post">
             <h1>Register</h1>
             <label for="username">Username: </label>
             <input type="text" name="username"">
@@ -43,10 +36,10 @@
         </form>
     </div>
     <div class="div2">
-        <form action="verification.php" method="post">
+        <form action="includes/login.inc.php" method="post">
             <h1>Login</h1>
             <label for="username">Username: </label>
-            <input type="text" name="username" value="<?php if (!empty($_GET["username"]) && $_GET["error"] == "login") { echo $_GET["username"]; } ?>">
+            <input type="text" name="username">
             <br>
             <label for="password">Password</label>
             <input type="password" name="password">
@@ -59,7 +52,5 @@
             ?>
         </form>
     </div>
-    <div class="div3"></div>
-    <div class="div4"></div>
 </body>
 </html>
